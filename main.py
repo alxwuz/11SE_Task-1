@@ -1,26 +1,34 @@
 import tkinter as tk
 
 root = tk.Tk()
-root.title("Alex's API Application")
-root.config(bg="darkblue")
+root.title("Alex's API")
+root.config(bg="lightblue")
 root.minsize(200, 200)
 root.maxsize(300, 300)
 root.geometry("250x250+50+50")
 
-def test():
-    print('the button worked, good job (thanks for all your credit card info)')
+welcome = tk.Label(
+    text="Welcome to my API Application",
+    background="lightblue"
+)
+welcome.pack()
 
-levin = tk.Label(root, text="levin is sigma")
-levin.pack()
+enter_city = tk.Label(
+    text="Enter your chosen city:", 
+    background="lightblue"
+)
+enter_city.pack()
 
-gullible = tk.Label(root, text="Look under me")
-gullible.pack()
+input = tk.Text(
+    font="Helvetica",
+    height="1",
+    width="20"
+)
+input.pack()
 
-test = tk.Button(root, text="click here for 100% on ASE", command=test)
-test.pack()
-
-tk.Label(root, text="Enter your input:").pack(anchor="w", padx=75)
-API_input = tk.Entry(root)
-API_input.pack()
+submit_input = tk.Button(
+    text="Get Results",
+)
+submit_input.pack()
 
 root.mainloop()
