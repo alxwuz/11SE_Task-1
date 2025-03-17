@@ -1,5 +1,5 @@
-# Import the requests library to handle HTTP requests
 import requests
+import random
 
 api_key = "63c9ea7502f74f61a0233952251103"
 base_url = "http://api.weatherapi.com/v1"
@@ -26,7 +26,6 @@ def display_weather_info(weather_data):
         temperature = weather_data["current"]["temp_c"] 
         condition = weather_data["current"]["condition"]["text"]
 
-        # Print the weather details
         print(f"Weather in {location}, {region}, {country}:")
         print(f"Temperature: {temperature}°C")
         print(f"Condition: {condition}")
@@ -43,3 +42,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+random = random.randint(0,5)
+print(random)

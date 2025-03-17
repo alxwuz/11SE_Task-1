@@ -1,4 +1,5 @@
 import tkinter as tk
+from my_module import *
 
 root = tk.Tk()
 root.title("Alex's API")
@@ -32,3 +33,5 @@ submit_input = tk.Button(
 submit_input.pack()
 
 root.mainloop()
+
+main()
