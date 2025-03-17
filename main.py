@@ -9,21 +9,18 @@ root.maxsize(300, 300)
 root.geometry("250x250+50+50")
 
 welcome = tk.Label(
-    text="Welcome to my API Application",
+    text="Alex's Weather Application",
     background="lightblue"
 )
 welcome.pack()
 
-enter_city = tk.Label(
-    text="Enter your chosen city:", 
+instructions = tk.Label(
+    text="To user this, enter a city of your choice and press the submit button to get the info.", 
     background="lightblue"
 )
-enter_city.pack()
+instructions.pack()
 
-input = tk.Text(
-    font="Helvetica",
-    height="1",
-    width="20"
+input = tk.Entry(
 )
 input.pack()
 
@@ -33,5 +30,3 @@ submit_input = tk.Button(
 submit_input.pack()
 
 root.mainloop()
-
-main()
