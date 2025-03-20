@@ -8,17 +8,17 @@ def get_weather():
     input_result.config(text=result)
   
 root = tk.Tk()
-root.title("Alex's API")
+root.title("AlxWeather")
 root.config(bg="lightblue")
 root.minsize(300, 325)
 root.maxsize(300, 325)
 root.geometry("300x325")
 
 title = tk.Label(
-    text="Alex's Weather Application",
+    text="AlxWeather",
     background="lightblue",
     font=("Arial", 20, "bold"),
-    wraplength=300
+    wraplength=250
 )
 title.pack(pady=15)
 
@@ -26,7 +26,7 @@ instructions = tk.Label(
     text="Enter a city in the input below to get its weather information.", 
     background="lightblue",
     font=("Arial", 12,),
-    wraplength=300
+    wraplength=250
 )
 instructions.pack(pady=5)
 
@@ -41,9 +41,9 @@ submit_input = tk.Button(
 submit_input.pack(pady=5)
 
 input_result = tk.Label(
-    background=("lightblue"),
+    background=("skyblue"),   
     font=("Arial", 12),
-    wraplength=300
+    wraplength=250
 )
 input_result.pack(pady=10)
 
