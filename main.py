@@ -1,48 +1,52 @@
 import tkinter as tk
+import ttkbootstrap
 from my_module import *
 
-def get_weather():
+def get_weather(event=None):
     city_name = city_input.get()
     weather_data = fetch_weather(city_name)
     result = format_weather_data(weather_data)
     input_result.config(text=result)
   
-root = tk.Tk()
-root.title("AlxWeather")
-root.config(bg="lightblue")
-root.minsize(300, 325)
-root.maxsize(300, 325)
-root.geometry("300x325")
+root = ttkbootstrap.Window(themename="superhero")
+root.title("11SE Weather API")
+root.minsize(300, 300)
+root.maxsize(300, 300)
+root.geometry("300x300")
 
-title = tk.Label(
+title = ttkbootstrap.Label(
     text="AlxWeather",
-    background="lightblue",
-    font=("Arial", 20, "bold"),
+    font=("Helvetica", 20, "bold"),
+    bootstyle = "primary",
     wraplength=250
 )
-title.pack(pady=15)
+title.pack(pady=5)
 
-instructions = tk.Label(
-    text="Enter a city in the input below to get its weather information.", 
-    background="lightblue",
-    font=("Arial", 12,),
+instructions = ttkbootstrap.Label(
+    text="Enter a city for the weather:", 
+    font=("Helvetica", 14,),
+    bootstyle = "info",
     wraplength=250
 )
 instructions.pack(pady=5)
 
-city_input = tk.Entry(
+city_input = ttkbootstrap.Entry(
+    font=("Helvetica, 16")
 )
-city_input.pack(pady=5)
+city_input.pack(pady=10)
 
-submit_input = tk.Button(
-    text="Get Results",
-    command=get_weather
+city_input.bind("<Return>", get_weather)
+
+submit_input = ttkbootstrap.Button(
+    text="Search",
+    command=get_weather,
+    bootstyle="warning"
 )
-submit_input.pack(pady=5)
+submit_input.pack()
 
-input_result = tk.Label(
-    background=("skyblue"),   
-    font=("Arial", 12),
+input_result = ttkbootstrap.Label(  
+    font=("Helvetica", 12),
+    bootstyle="success",
     wraplength=250
 )
 input_result.pack(pady=10)
