@@ -94,13 +94,21 @@ Weather data is retrieved successfully or is returned an error.
 ![Alt text](images/gantt%20chart.png)
 
 ## Structure Chart
-![Alt text](images/structure_diagram.png)
+![Alt text](images/structure%20chart.png)
 
 ## Algorithms
-
+```
+BEGIN root.mainloop()
+INPUT city_input
+IF API Request Valid THEN
+    Find Weather in City
+ELSE
+    DISPLAY "There was an error retrieving your data from the city."    
+ENDIF
+END root.mainloop()
+```
 
 ## Data Dictionary
-
 
 # Development
 

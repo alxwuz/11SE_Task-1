@@ -38,7 +38,7 @@ city_input.pack(pady=10)
 city_input.bind("<Return>", get_weather)
 
 submit_input = ttkbootstrap.Button(
-    text="Search",
+    text="Search",  
     command=get_weather,
     bootstyle="warning"
 )
