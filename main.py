@@ -1,6 +1,6 @@
 import tkinter as tk
 import ttkbootstrap
-from my_module import *
+from api import *
 
 def get_weather(event=None):
     city_name = city_input.get()
