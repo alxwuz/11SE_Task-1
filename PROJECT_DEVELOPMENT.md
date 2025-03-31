@@ -97,6 +97,9 @@ Weather data is retrieved successfully or is returned an error.
 ![Alt text](images/structure%20chart.png)
 
 ## Algorithms
+![Alt text](images/algorithm.png)
+
+### Psuedocode
 ```
 BEGIN root.mainloop()
 INPUT city_input
@@ -118,4 +121,4 @@ END root.mainloop()
 
 # Installation
 
-# Maintenance+
+# Maintenance

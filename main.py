@@ -7,12 +7,15 @@ def get_weather(event=None):
     weather_data = fetch_weather(city_name)
     result = format_weather_data(weather_data)
     input_result.config(text=result)
+
+def exit():
+    root.destroy()
   
 root = ttkbootstrap.Window(themename="superhero")
 root.title("11SE Weather API")
-root.minsize(300, 300)
-root.maxsize(300, 300)
-root.geometry("300x300")
+root.minsize(300, 350)
+root.maxsize(300, 350)
+root.geometry("300x350")
 
 title = ttkbootstrap.Label(
     text="AlxWeather",
@@ -40,7 +43,7 @@ city_input.bind("<Return>", get_weather)
 submit_input = ttkbootstrap.Button(
     text="Search",  
     command=get_weather,
-    bootstyle="warning"
+    bootstyle="outline button"
 )
 submit_input.pack()
 
@@ -49,6 +52,13 @@ input_result = ttkbootstrap.Label(
     bootstyle="success",
     wraplength=250
 )
-input_result.pack(pady=10)
+input_result.pack(pady=25)
+
+exit_button =ttkbootstrap.Button(
+    text="Exit Program",
+    command=exit,
+    bootstyle="danger"
+)
+exit_button.pack(pady=10, side="bottom")
 
 root.mainloop()
