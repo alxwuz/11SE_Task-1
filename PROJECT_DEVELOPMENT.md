@@ -97,9 +97,10 @@ Weather data is retrieved successfully or is returned an error.
 ![Alt text](images/structure%20chart.png)
 
 ## Algorithms
+### Main Process
 ![Alt text](images/algorithm.png)
 
-### Psuedocode
+#### Psuedocode
 ```
 BEGIN root.mainloop()
 INPUT city_input
@@ -111,10 +112,177 @@ ENDIF
 END root.mainloop()
 ```
 
+### get_weather
+![Alt text](images/algorithm_get_weather.png)
+
+#### Psuedocode
+```
+BEGIN get_weather()
+    city_name = city_input.get()
+    weather_data = fetch_weather(city_name)
+    result = format_weather_data(weather_data)
+    input_result.config(text=result)
+END get_weather
+```
+
+### exit
+![Alt text](images/algorithm_exit.png)
+
+#### Psuedocode
+```
+BEGIN exit()
+    root.destroy()
+END exit()
+```
+
 ## Data Dictionary
+![Alt text](images/data_dictionary.png)
 
 # Development
+main.py
+```
+"""
+Import needed modules
+"""
+import tkinter as tk
+import ttkbootstrap
+from api import *
 
+"""
+Fetches the weather from the other python file and displays it
+"""
+def get_weather(event=None):
+    city_name = city_input.get()
+    weather_data = fetch_weather(city_name)
+    result = format_weather_data(weather_data)
+    input_result.config(text=result)
+
+"""
+Closes the program
+"""
+def exit():
+    root.destroy()
+  
+"""
+Creates the main window
+"""
+root = ttkbootstrap.Window(themename="superhero")
+root.title("11SE Weather API")
+root.minsize(300, 350)
+root.maxsize(300, 350)
+root.geometry("300x350")
+
+"""
+Adds the title of the program
+"""
+title = ttkbootstrap.Label(
+    text="AlxWeather",
+    font=("Helvetica", 20, "bold"),
+    bootstyle = "primary",
+    wraplength=250
+)
+title.pack(pady=5)
+
+"""
+Adds the instructions
+"""
+instructions = ttkbootstrap.Label(
+    text="Enter a city for the weather:", 
+    font=("Helvetica", 14,),
+    bootstyle = "info",
+    wraplength=250
+)
+instructions.pack(pady=5)
+
+"""
+Adds a text box for city input
+"""
+city_input = ttkbootstrap.Entry(
+    font=("Helvetica, 16")
+)
+city_input.pack(pady=10)
+
+"""
+Binds the enter key to the get_weather function
+"""
+city_input.bind("<Return>", get_weather)
+
+"""
+Adds a button the submit the city
+"""
+submit_input = ttkbootstrap.Button(
+    text="Search",  
+    command=get_weather,
+    bootstyle="outline button"
+)
+submit_input.pack()
+
+"""
+Displays the weather info after submitted
+"""
+input_result = ttkbootstrap.Label(  
+    font=("Helvetica", 12),
+    bootstyle="success",
+    wraplength=250
+)
+input_result.pack(pady=25)
+
+"""
+Exits the program when pressed
+"""
+exit_button =ttkbootstrap.Button(
+    text="Exit Program",
+    command=exit,
+    bootstyle="danger"
+)
+exit_button.pack(pady=10, side="bottom")
+
+"""
+Loops the program until closed
+"""
+root.mainloop()
+```
+
+api.py
+```
+"""
+Import needed modules
+"""
+import requests
+
+"""
+# API key and url
+"""
+api_key = "63c9ea7502f74f61a0233952251103"
+base_url = "http://api.weatherapi.com/v1"
+
+"""
+Gets the information from the API using the variables
+"""
+def fetch_weather(city_name):
+    complete_url = f"{base_url}/current.json?key={api_key}&q={city_name}"
+    response = requests.get(complete_url)
+    if response.status_code == 200:
+        return response.json() # If successful (code 200), returns the response
+    else:
+        return None # If not, doesn't do anything
+
+"""
+Formats the given data
+"""
+def format_weather_data(weather_data):
+    if weather_data:
+        location = weather_data["location"]["name"]
+        region = weather_data["location"]["region"]
+        country = weather_data["location"]["country"]
+        temperature = weather_data["current"]["temp_c"]
+        condition = weather_data["current"]["condition"]["text"]
+        return (f"Weather in {location}, {region}, {country}:\n"
+                f"Temperature: {temperature}°C\nCondition: {condition}") # Returns the formatted data
+    else:
+        return "There was an error retrieving your data from the city." # If it cannot format, it will display this
+    
+```
 # Integration
 
 # Testing and Debugging
