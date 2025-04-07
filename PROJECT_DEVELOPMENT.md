@@ -353,7 +353,7 @@ If a bug is found, there will be some steps I would take to fix it. First, test 
 
 4. **Outline how you would maintain clear documentation and ensure the program remains easy to update in the future.**
 
-To maintain clear documentation, there is already a README.md for everyone to see that gives clear instructions on how to use the program. The program won't have many updates after finishing apart from possible bug fixes, but then there would be a commit which everyone can see.
+To maintain clear documentation, there is already a README.md for everyone to see that gives clear instructions on how to use the program. The program won't have many updates after finishing apart from possible bug fixes, but then there would be a commit which everyone can see. I also included docstrings and comments to make the code more readable and easier to reflect on.
 
 ## Peer Evaluation
 ### Shawn
