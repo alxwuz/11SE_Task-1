@@ -1,5 +1,5 @@
 """
-Import needed modules
+Imports needed modules
 """
 import tkinter as tk
 import ttkbootstrap
@@ -23,9 +23,9 @@ def exit():
 """
 Creates the main window
 """
-root = ttkbootstrap.Window(themename="superhero")
-root.title("11SE Weather API")
-root.minsize(300, 350)
+root = ttkbootstrap.Window(themename="superhero") # Theme of the GUI
+root.title("11SE Weather API") 
+root.minsize(300, 350) # Window Sizes
 root.maxsize(300, 350)
 root.geometry("300x350")
 
