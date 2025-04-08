@@ -6,20 +6,20 @@ This is where all the documentation and development will occur.
 ## Functional Requirements
 - **Data Retrieval:** What does the user need to be able to view in the system? 
 
-The user must view the data that is obtained from the dataset. If there are any errors due to not having any data or something else, there will need to specify if there isn't any data or not. For example, if a movie in a dataset did not have the time of release, then it should say something like N/A, and not an error so the user knows the information is unavailable.
+The user must view the data that is obtained from the dataset. If there are any errors due to not having any data or something else, it will need to specify if there isn't any data or not. For example, if a movie in a dataset did not have the time of release, then it should say something like N/A, and not an error so the user knows the information is unavailable.
 
 - **User Interface:** What is required for the user to interact with the system?
 
-For the user to interact with the system, the requirement will need to be at least a command-line interface which allows the user to understand what is happening, and use the application to connect with the API without any bugs or problems. The program will also need to be able to sort and configure the dataset for some sections of the info, such as showing the descending order from a chosen category.
+For the user to interact with the system, the requirement will need to be at least a command-line interface which allows the user to understand what is happening, and use the application to connect with the API without any bugs or problems.
 
 - **Data Display:** What information does the user need to obtain from the system?
 
-The user needs to be able to access all of the data from the chosen API. There cannot be any modifications of the dataset, and errors need to be shown.
+The user needs to be able to access the data from the chosen API. There cannot be any modifications of the dataset, and errors need to be shown if something bad happens.
 
 ## Non-Functional Requirements
 - **Performance:** How well does the system need to perform? 
 
-The system needs to be fairly efficient as it cannot be too slow and perform the sorting slowly. This isn't really hard as python is a fairly fast programming language, and with the help of other modules, it won't lack in performance.
+The system needs to be fairly efficient as it cannot be too slow and perform the sorting slowly. This isn't really hard as python is a fairly fast programming language, and with the help of other modules, it won't be noticeably slow unless there is a lot of data to sort through.
 
 - **Reliability:** How reliable does the system and data need to be?
 
@@ -27,7 +27,7 @@ To have a reliable program, there needs to be a well-written application that ha
 
 - **Usability and Accessibility:** How easy to navigate does the system need to be? What instructions will we need for users to access the system?
 
-There should be a README file where users can open it and get instructions on how to use the application, how to install the required repositories, etc. 
+There should be a README file where users can open it and get instructions on how to use the application, how to install the required repositories, etc. There should also be comments on the code to let people understand it. If wanted, a GUI could be made for a better looking program, but may be advanced to implement.
 
 # Determining Specifications
 ## Functional Specifications
@@ -41,11 +41,11 @@ It needs to accept the input city from the user and out the weather conditions i
 
 - **Core Features**
 
-The program must communicate with the API and get its data.
+The program must communicate with the API and get data from the city that the user has chosen.
 
 - **User Interaction**
 
-The program will be a fairly simple application, in which it will provide the data for the user, which will then be programmed within a GUI for the user to view.
+The program will be a fairly simple application, in which it will provide the data for the user from an input where the user can write their chosen city.
 
 - **Error Handling**
 
@@ -58,7 +58,7 @@ The system will need to be able to run calculations within the API efficiently, 
 
 - **Useability / Accessibility**
 
-To make the GUI more usable and accessible, there could be new features added such as voice to text, or a high contrast option for some people.
+To make the program more usable and accessible, there could be new features added for those who need extra help such as an accessibility option.
 
 - **Reliability**
 
@@ -306,7 +306,7 @@ GUI feature added, with better GUI changes such as font, etc, and ditched the ra
 Did some minor changes on the GUI, as well as adding the modules in requirements.txt. All is working well, no bugs. Not much else to do other than improvements.
 
 ### Work, Mar 24
-Added a new module called ttkbootstrap, which is a very good-looking addon for tkinter with custom themes, making it look good, as well as adding an enter input to submit the city. All is fine, did some configuring. Not much to do again.
+Added a new module called ttkbootstrap, which is a very good-looking addon for Tkinter with custom themes, making it look good, as well as adding an enter input to submit the city. All is fine, did some configuring. Not much to do again.
 
 ### Work, Mar 27
 Changed my_module.py to api.py, added ttkbootstrap in the requirements. Nothing wrong, basically almost done for the programming part.
@@ -327,7 +327,7 @@ requests >= 2.32.3
 This task is about developing a data science program, which can allow users to search for data from an API that they want to know about. please see PROJECT_DEVELOPMENT.md for more information.
 
 # AlxWeather
-AlxWeather is a lightweight GUI made in tkinter that communicates with https://weatherapi.com's API to find weather in any available city.
+AlxWeather is a lightweight GUI made in Tkinter that communicates with https://weatherapi.com's API to find weather in any available city.
 
 ## Installation
 First, clone this repository and navigate to the root directory.
