@@ -317,8 +317,8 @@ Added an exit button, and changed some of the GUI sizing. All good, not much els
 # Installation
 **requirements.txt**
 ```
-ttkbootstrap==1.10.1
-requests==2.32.3
+ttkbootstrap >= 1.10.1
+requests >= 2.32.3
 ```
 
 **README.md**
